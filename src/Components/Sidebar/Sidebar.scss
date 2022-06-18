@@ -1,0 +1,37 @@
+.widget-area.leftsidebar {
+  background: #2a3042;
+  color: #fff;
+  left: 0;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  width: 220px;
+  transition: all ease-in-out 0.5s;
+  z-index: 9;
+  .cl-sidebar {
+    background: #2a3042;
+    color: #fff;
+    .navbar-expand-lg {
+      flex-flow: column !important;
+    }
+    .navbar-nav {
+      flex-direction: column !important;
+    }
+    .navbar-light {
+      .navbar-brand {
+        color: rgb(255 255 255 / 90%);
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .navbar-nav {
+        .nav-link {
+          color: #fff;
+          .icon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
