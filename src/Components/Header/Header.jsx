@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Header.scss";
 
 export const Header = () => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false);
   const [showCluser, setShowCluser] = useState(true);
   const [showClnoti, setShowClnoti] = useState(true);
   return (

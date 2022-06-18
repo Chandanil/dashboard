@@ -11,7 +11,6 @@ export const Table = () => {
       noPaidDate: "60 Days",
       previousInfo: "We can't meet at newroad pasal",
       contactno: "9812345678",
-      icon: <i className="fa fa-ellipsis-v"></i>,
     },
     {
       name: "Chandani Lama",
@@ -56,7 +55,7 @@ export const Table = () => {
           <tbody>
             {data?.map((item, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td>
                     <input type="checkbox"></input>
                   </td>
@@ -67,7 +66,51 @@ export const Table = () => {
                   <td>{item.noPaidDate}</td>
                   <td>{item.previousInfo}</td>
                   <td>{item.contactno}</td>
-                  <td>{item.icon}</td>
+                  <td>
+                    <div className="dropdown">
+                      <i className="fa fa-ellipsis-v"></i>
+                      <div className="drodpwn-menu">
+                        <ul>
+                          <li>
+                            <i className="fa fa-eye"></i>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-secondary dropdown-toggle"
+                        href="#"
+                        role="button"
+                        id="dropdownMenuLink"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Dropdown link
+                      </a>
+
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuLink"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Something else here
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
                 </tr>
               );
             })}

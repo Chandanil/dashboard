@@ -1,14 +1,29 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Header } from "./Components/Header/Header";
+import { Sidebar } from "./Components/Sidebar/Sidebar";
+import { Form } from "./Components/Form/Form";
+import { Home } from "./Pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Table } from "./Components/Maincard/Table/Table";
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
-          <Route path="about" element={<h1>About</h1>} />
-        </Routes>
+        <div className="site-content">
+          <aside className="widget-area  leftsidebar">
+            <Sidebar />
+          </aside>
+          <section className="wrapper-content">
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/all-list" element={<Table />} />
+            </Routes>
+          </section>
+        </div>
       </BrowserRouter>
     </div>
   );

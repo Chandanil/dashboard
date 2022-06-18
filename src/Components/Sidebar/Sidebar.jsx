@@ -1,13 +1,18 @@
 import "./Sidebar.scss";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 export const Sidebar = () => {
   return (
     <>
       <div className="cl-sidebar">
         <div className="container">
-          <p>
-            <i className="fa fa-home"></i>Dashboard
-          </p>
+          <Link to="/form">
+            <h1>form</h1>
+          </Link>
+          <Link to="/">
+            <p>
+              <i className="fa fa-home"></i>Dashboard
+            </p>
+          </Link>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
