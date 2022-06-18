@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/esm/Button";
 import "./Btn.scss";
 
 export const Btn = () => {

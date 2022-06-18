@@ -1,3 +1,4 @@
+import Dropdown from "react-bootstrap/Dropdown";
 import { Btn } from "../../Button/Btn";
 import "./Table.scss";
 
@@ -67,49 +68,21 @@ export const Table = () => {
                   <td>{item.previousInfo}</td>
                   <td>{item.contactno}</td>
                   <td>
-                    <div className="dropdown">
-                      <i className="fa fa-ellipsis-v"></i>
-                      <div className="drodpwn-menu">
-                        <ul>
-                          <li>
-                            <i className="fa fa-eye"></i>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="dropdown">
-                      <a
-                        class="btn btn-secondary dropdown-toggle"
-                        href="#"
-                        role="button"
-                        id="dropdownMenuLink"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Dropdown link
-                      </a>
+                    <Dropdown>
+                      <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        Dropdown Button
+                      </Dropdown.Toggle>
 
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuLink"
-                      >
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Action
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Something else here
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                      <Dropdown.Menu>
+                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">
+                          Another action
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#/action-3">
+                          Something else
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </td>
                 </tr>
               );
