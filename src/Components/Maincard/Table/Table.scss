@@ -1,0 +1,18 @@
+.cl-table {
+  background-color: #fff;
+  padding: 15px;
+  .table {
+    text-align: center;
+    thead {
+      th {
+        vertical-align: middle;
+        background: #f8f8fb;
+        border: none;
+        font-weight: normal;
+      }
+    }
+    td {
+      font-size: 14px;
+    }
+  }
+}

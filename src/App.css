@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +31,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* cl styles start */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f8fb;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.cl-mr-0 {
+  margin-right: 0;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.same-gap {
+  padding: 20px 0;
+}
+.cl-search .form-control {
+  box-shadow: 0 0px 4px rgb(0 0 0 / 6%);
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.site-content {
+  background: #f8f8fb;
+  position: relative;
+  min-height: 100%;
+}
+.wrapper-content {
+  margin: 0 20px 20px 240px;
+}
+.form-group {
+  margin-bottom: 20px;
 }
