@@ -1,6 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Btn } from "../../Button/Btn";
 import "./Table.scss";
+import { Link } from "react-router-dom";
 
 export const Table = () => {
   const data = [
@@ -101,8 +102,10 @@ export const Table = () => {
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
-                        <Dropdown.Item href="/loan-follow-up">
-                          <i className="fa fa-edit"></i>Edit
+                        <Dropdown.Item>
+                          <Link to="/loan-follow-up">
+                            <i className="fa fa-edit"></i>Edit
+                          </Link>
                         </Dropdown.Item>
                         <Dropdown.Item href="#/action-2">
                           <i className="fa fa-eye"></i> View

@@ -21,7 +21,11 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <div className="site-content">
-          <aside className="widget-area  leftsidebar">
+          <aside
+            className={`widget-area  leftsidebar ${
+              showSidebar === false ? "hide" : ""
+            }`}
+          >
             <Sidebar showSidebar={showSidebar} />
           </aside>
 

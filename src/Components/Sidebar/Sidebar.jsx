@@ -5,7 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 export const Sidebar = (props) => {
   return (
     <>
-      <div className={`cl-sidebar ${props.showSidebar ? "show" : ""}`}>
+      <div className="cl-sidebar">
         <div className="container">
           <Accordion className="cl-sidemenu">
             <Link className="menu-item" to="/">

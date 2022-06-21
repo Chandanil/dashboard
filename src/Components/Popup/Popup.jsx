@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Popup.scss";
 import Modal from "react-awesome-modal";
+import { LoanFollowForm } from "../Form/LoanFollowForm";
 
 export const Popup = () => {
   const [visible, setVisible] = useState(false);
@@ -23,9 +24,8 @@ export const Popup = () => {
         onClickAway={() => closeModal()}
       >
         <div>
-          <h1>Title</h1>
-          <p>Some Contents</p>
-          <span onClick={() => closeModal()}>Close</span>
+          <LoanFollowForm />
+          <span onClick={() => closeModal()}>X</span>
         </div>
       </Modal>
     </div>
