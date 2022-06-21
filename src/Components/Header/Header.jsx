@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./Header.scss";
 
-export const Header = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
+export const Header = (props) => {
   const [showCluser, setShowCluser] = useState(true);
   const [showClnoti, setShowClnoti] = useState(true);
   return (
@@ -12,10 +11,8 @@ export const Header = () => {
           <div className="col-md-8">
             <div className="cl-flex">
               <div
-                className={`hamburger ${showSidebar ? "show" : ""}`}
-                onClick={() => {
-                  setShowSidebar(!showSidebar);
-                }}
+                className={`hamburger ${props.showSidebar ? "" : "show"}`}
+                onClick={props.sideBarToggle}
               >
                 <span></span>
                 <span></span>

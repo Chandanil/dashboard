@@ -2,10 +2,10 @@ import "./Sidebar.scss";
 import { Link } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 
-export const Sidebar = () => {
+export const Sidebar = (props) => {
   return (
     <>
-      <div className="cl-sidebar">
+      <div className={`cl-sidebar ${props.showSidebar ? "show" : ""}`}>
         <div className="container">
           <Accordion className="cl-sidemenu">
             <Link className="menu-item" to="/">
@@ -17,7 +17,6 @@ export const Sidebar = () => {
                 <i className="fa fa-money icon"></i>Load Details
               </Accordion.Header>
               <Accordion.Body>
-                {" "}
                 <Link className="item" to="/add-item">
                   Add New
                 </Link>

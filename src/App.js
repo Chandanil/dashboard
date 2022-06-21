@@ -7,17 +7,27 @@ import { Home } from "./Pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Table } from "./Components/Maincard/Table/Table";
 import { LoanFollowForm } from "./Components/Form/LoanFollowForm";
+import { useState } from "react";
+import { Popup } from "./Components/Popup/Popup";
 
-function App() {
+const App = () => {
+  const [showSidebar, setShowSidebar] = useState(true);
+
+  const sideBarToggle = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
         <div className="site-content">
           <aside className="widget-area  leftsidebar">
-            <Sidebar />
+            <Sidebar showSidebar={showSidebar} />
           </aside>
+
           <section className="wrapper-content">
-            <Header />
+            <Header sideBarToggle={sideBarToggle} showSidebar={showSidebar} />
+            <Popup />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/add-item" element={<Form />} />
@@ -29,6 +39,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
