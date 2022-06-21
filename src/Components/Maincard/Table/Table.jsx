@@ -2,37 +2,50 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Btn } from "../../Button/Btn";
 import "./Table.scss";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Popup } from "../../Popup/Popup";
+import { LoanFollowForm } from "../../Form/LoanFollowForm";
+
+const data = [
+  {
+    name: "Chandani Lama",
+    expiryTime: "03 Jun 2022",
+    payDate: "03 April 2022",
+    totalDue: "95000.00",
+    noPaidDate: "60 Days",
+    previousInfo: "We can't meet at newroad pasal",
+    contactno: "9812345678",
+  },
+  {
+    name: "Chandani Lama",
+    expiryTime: "03 Jun 2022",
+    payDate: "03 April 2022",
+    totalDue: "95000.00",
+    noPaidDate: "60 Days",
+    previousInfo: "We can't meet at newroad pasal",
+    contactno: "9812345678",
+  },
+  {
+    name: "Chandani Lama",
+    expiryTime: "03 Jun 2022",
+    payDate: "03 April 2022",
+    totalDue: "95000.00",
+    noPaidDate: "60 Days",
+    previousInfo: "We can't meet at newroad pasal",
+    contactno: "9812345678",
+  },
+];
 
 export const Table = () => {
-  const data = [
-    {
-      name: "Chandani Lama",
-      expiryTime: "03 Jun 2022",
-      payDate: "03 April 2022",
-      totalDue: "95000.00",
-      noPaidDate: "60 Days",
-      previousInfo: "We can't meet at newroad pasal",
-      contactno: "9812345678",
-    },
-    {
-      name: "Chandani Lama",
-      expiryTime: "03 Jun 2022",
-      payDate: "03 April 2022",
-      totalDue: "95000.00",
-      noPaidDate: "60 Days",
-      previousInfo: "We can't meet at newroad pasal",
-      contactno: "9812345678",
-    },
-    {
-      name: "Chandani Lama",
-      expiryTime: "03 Jun 2022",
-      payDate: "03 April 2022",
-      totalDue: "95000.00",
-      noPaidDate: "60 Days",
-      previousInfo: "We can't meet at newroad pasal",
-      contactno: "9812345678",
-    },
-  ];
+  const [visible, setVisible] = useState(false);
+
+  const openModal = () => {
+    setVisible(true);
+  };
+  const closeModal = () => {
+    setVisible(false);
+  };
+
   return (
     <>
       <div className="cl-table">
@@ -103,15 +116,27 @@ export const Table = () => {
 
                       <Dropdown.Menu>
                         <Dropdown.Item>
-                          <Link to="/loan-follow-up">
+                          <div
+                            onClick={() => {
+                              openModal();
+                            }}
+                          >
                             <i className="fa fa-edit"></i>Edit
-                          </Link>
+                          </div>
                         </Dropdown.Item>
                         <Dropdown.Item href="#/action-2">
                           <i className="fa fa-eye"></i> View
                         </Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
+
+                    {visible && (
+                      <Popup
+                        visible={visible}
+                        closeModal={closeModal}
+                        renderComponent={<LoanFollowForm />}
+                      />
+                    )}
                   </td>
                 </tr>
               );

@@ -1,31 +1,21 @@
-import { useState } from "react";
 import "./Popup.scss";
 import Modal from "react-awesome-modal";
-import { LoanFollowForm } from "../Form/LoanFollowForm";
 
-export const Popup = () => {
-  const [visible, setVisible] = useState(false);
-
-  const openModal = () => {
-    setVisible(true);
-  };
-  const closeModal = () => {
-    setVisible(false);
-  };
-
+export const Popup = (props) => {
   return (
     <div className="popup">
-      <input type="button" value="Open" onClick={() => openModal()} />
       <Modal
-        visible={visible}
+        visible={props.visible}
         width="400"
         height="300"
         effect="fadeInUp"
-        onClickAway={() => closeModal()}
+        onClickAway={() => props.closeModal()}
       >
         <div>
-          <LoanFollowForm />
-          <span onClick={() => closeModal()}>X</span>
+          {/* to close popup */}
+          <span onClick={() => props.closeModal()}>X</span>
+          {/* component to be render */}
+          {props.renderComponent}
         </div>
       </Modal>
     </div>

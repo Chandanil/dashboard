@@ -31,7 +31,6 @@ const App = () => {
 
           <section className="wrapper-content">
             <Header sideBarToggle={sideBarToggle} showSidebar={showSidebar} />
-            <Popup />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/add-item" element={<Form />} />
