@@ -146,7 +146,7 @@ export const Form = () => {
                       />
                     </div>
                   </div>
-                  <div className="btn-group text-center">
+                  <div className="btn-group text-center d-block">
                     <button className="cl-btn">Save Details</button>
                   </div>
                 </div>

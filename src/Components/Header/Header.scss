@@ -1,5 +1,5 @@
 .cl-header {
-  padding: 20px 0;
+  padding: 15px 0;
   .cl-flex {
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@
     margin-left: auto;
   }
 
-  .hamburger.show {
+  .hamburger {
     cursor: pointer;
     width: 35px;
     &:focus {
@@ -26,7 +26,7 @@
       transition: all ease-in-out 0.3s;
     }
   }
-  .hamburger {
+  .hamburger.show {
     background-color: transparent;
     outline: none;
     border: none;
@@ -124,7 +124,7 @@
 .cl-dropdown {
   .cl-dropdown-menu {
     display: block;
-    background: #333;
+    background: #2a3042;
     color: #fff;
     padding: 15px;
     left: auto;

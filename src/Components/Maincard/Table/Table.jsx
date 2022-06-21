@@ -36,13 +36,42 @@ export const Table = () => {
     <>
       <div className="cl-table">
         <h4 className="title">Follow up Details</h4>
-        <Btn />
+        <div className="data-filter">
+          <Btn />
+          <div className="right-content">
+            <div className="cl-search">
+              <form>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    placeholder="Search.."
+                  />
+                  <i className="fa fa-search icon"></i>
+                </div>
+              </form>
+            </div>
+            <Dropdown className="filter-dropdown">
+              <Dropdown.Toggle className="cl-btn">
+                <span>Filter</span>
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">
+                  <span>Filter 1</span>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
+                  <span>Filter 2</span>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+        </div>
         <table className="table">
           <thead>
             <tr>
-              <th>
-                <input type="checkbox"></input>
-              </th>
+              <th>S.N </th>
               <th>Name</th>
               <th>Expire Time</th>
               <th>Pay Date</th>
@@ -57,9 +86,7 @@ export const Table = () => {
             {data?.map((item, index) => {
               return (
                 <tr key={index}>
-                  <td>
-                    <input type="checkbox"></input>
-                  </td>
+                  <td>{index + 1}</td>
                   <td>{item.name}</td>
                   <td>{item.expiryTime}</td>
                   <td>{item.payDate}</td>
@@ -68,18 +95,17 @@ export const Table = () => {
                   <td>{item.previousInfo}</td>
                   <td>{item.contactno}</td>
                   <td>
-                    <Dropdown>
-                      <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        Dropdown Button
+                    <Dropdown className="table-dropdown">
+                      <Dropdown.Toggle variant="success">
+                        <i className="fa fa-ellipsis-v drop-icon"></i>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">
-                          Another action
+                        <Dropdown.Item href="/loan-follow-up">
+                          <i className="fa fa-edit"></i>Edit
                         </Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">
-                          Something else
+                        <Dropdown.Item href="#/action-2">
+                          <i className="fa fa-eye"></i> View
                         </Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>

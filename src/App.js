@@ -6,6 +6,7 @@ import { Form } from "./Components/Form/Form";
 import { Home } from "./Pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Table } from "./Components/Maincard/Table/Table";
+import { LoanFollowForm } from "./Components/Form/LoanFollowForm";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/form" element={<Form />} />
+              <Route path="/add-item" element={<Form />} />
               <Route path="/all-list" element={<Table />} />
+              <Route path="/loan-follow-up" element={<LoanFollowForm />} />
             </Routes>
           </section>
         </div>
