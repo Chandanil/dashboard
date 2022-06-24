@@ -47,8 +47,17 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font-weight: 700;
+  color: #424754;
 }
-
+ul {
+  /* padding-inline-start: 0;
+  margin-block-start: 0; */
+  padding-left: 0;
+}
+ul li {
+  list-style: none;
+}
 .cl-mr-0 {
   margin-right: 0;
 }
@@ -56,7 +65,7 @@ h6 {
   padding-bottom: 20px;
 }
 .same-gap {
-  padding: 20px 0;
+  margin: 20px 0 0;
 }
 .cl-search .form-control {
   box-shadow: 0 0px 4px rgb(0 0 0 / 6%);
@@ -71,7 +80,17 @@ h6 {
 }
 .wrapper-content {
   margin: 0 20px 20px 240px;
+  transition: all ease-in-out 0.5s;
+}
+.hide-dashboard .wrapper-content {
+  margin-left: 110px;
+  transition: all ease-in-out 0.5s;
 }
 .form-group {
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 991px) {
+  .hide-dashboard .wrapper-content {
+    margin-left: 20px;
+  }
 }

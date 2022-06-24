@@ -7,8 +7,10 @@ import { Home } from "./Pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Table } from "./Components/Maincard/Table/Table";
 import { LoanFollowForm } from "./Components/Form/LoanFollowForm";
+import { EditForm } from "./Components/Form/EditForm";
+import { ViewForm } from "./Components/Form/ViewForm";
 import { useState } from "react";
-import { Popup } from "./Components/Popup/Popup";
+// import { Popup } from "./Components/Popup/Popup";
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -20,12 +22,12 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <div className="site-content">
-          <aside
-            className={`widget-area  leftsidebar ${
-              showSidebar === false ? "hide" : ""
-            }`}
-          >
+        <div
+          className={`site-content ${
+            showSidebar === false ? "hide-dashboard" : ""
+          }`}
+        >
+          <aside className="widget-area  leftsidebar">
             <Sidebar showSidebar={showSidebar} />
           </aside>
 

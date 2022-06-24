@@ -2,7 +2,7 @@ import "./Form.scss";
 export const LoanFollowForm = () => {
   return (
     <>
-      <div className="follow-form">
+      <div className="follow-form container">
         <form>
           <div className="loan-form">
             <h4 className="title">Loan Follow up</h4>

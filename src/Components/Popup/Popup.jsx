@@ -6,14 +6,15 @@ export const Popup = (props) => {
     <div className="popup">
       <Modal
         visible={props.visible}
-        width="400"
-        height="300"
+        width="70%"
         effect="fadeInUp"
         onClickAway={() => props.closeModal()}
       >
-        <div>
+        <div className="modal-body">
           {/* to close popup */}
-          <span onClick={() => props.closeModal()}>X</span>
+          <span className="close" onClick={() => props.closeModal()}>
+            X
+          </span>
           {/* component to be render */}
           {props.renderComponent}
         </div>
