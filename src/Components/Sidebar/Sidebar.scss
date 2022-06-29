@@ -99,6 +99,11 @@ a {
   }
   .accordion-body {
     padding: 0;
+    .item {
+      display: block;
+      cursor: pointer;
+      padding: 5px 15px;
+    }
   }
 }
 .hide-dashboard {
