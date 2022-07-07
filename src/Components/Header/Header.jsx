@@ -1,10 +1,20 @@
 import { useState } from "react";
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
+import axios from "axios";
 
 export const Header = (props) => {
+  const navigate = useNavigate();
   const [showCluser, setShowCluser] = useState(true);
   const [showClnoti, setShowClnoti] = useState(true);
+  const logoutSubmit = (e)=>{
+    e.preventDefault()
+    
+        localStorage.removeItem('auth_token');
+        localStorage.removeItem('auth_name');
+        window.location.reload('/');
+    
+  }
   return (
     <>
       <div className="cl-header">
@@ -86,7 +96,7 @@ export const Header = (props) => {
                 <div className="user-info">
                   <img src="Images/testo.jpg" alt="testo" />
                   <div className="user-name">
-                    <h6 className="title">Chandani Lama</h6>
+                    <h6 className="title">{localStorage.getItem('auth_name')}</h6>
                     <small>Admin</small>
                   </div>
                 </div>
@@ -94,12 +104,12 @@ export const Header = (props) => {
                   <li className="user-detail">
                     <img src="Images/testo.jpg" alt="testo" />
                     <p>
-                      Chandani Lama- Web Designer
+                    {localStorage.getItem('auth_name')}
                       <small>Member since Nov. 2012</small>
                     </p>
-                    <Link to="" className="btn-small">
+                    <button onClick={logoutSubmit} className="btn-small">
                       Sign out
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </div>

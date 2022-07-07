@@ -131,13 +131,16 @@ ol {
 }
 .cl-dropdown.toggle {
   .cl-dropdown-menu {
-    opacity: 0;
     transition: all ease-in-out 0.4s;
     right: -20px;
+    visibility: hidden;
+    transform: translateX(30px);
   }
 }
 .cl-dropdown {
   .cl-dropdown-menu {
+    visibility: visible;
+    transform: translateX(0);
     display: block;
     background: #fff;
     /* color: #fff; */

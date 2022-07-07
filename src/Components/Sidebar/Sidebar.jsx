@@ -19,14 +19,29 @@ export const Sidebar = (props) => {
             </Accordion.Header>
             <Accordion.Body>
               <Link className="item" to="/add-item">
-                Add New
+                Add 
               </Link>
-              <Link className="item" to="/all-list">
-                Add List
+              <Link className="item" to="/loan-list">
+                 List
               </Link>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
+            <Accordion.Header className="menu-item">
+              <i className="fa fa-user-o icon"></i>
+              <span>Customer</span>
+            </Accordion.Header>
+            <Accordion.Body>
+              <Link className="item" to="/add-customer">
+                Add
+              </Link>
+              <Link className="item" to="/list-customer">
+                List
+              </Link>
+            </Accordion.Body>
+          </Accordion.Item>
+
+          <Accordion.Item eventKey="2">
             <Accordion.Header className="menu-item">
               <i className="fa fa-floppy-o icon"></i>
               <span>Savings</span>
@@ -40,6 +55,7 @@ export const Sidebar = (props) => {
               </Link>
             </Accordion.Body>
           </Accordion.Item>
+          
         </Accordion>
       </div>
     </>
