@@ -8,11 +8,16 @@ export const Header = (props) => {
   const [showCluser, setShowCluser] = useState(true);
   const [showClnoti, setShowClnoti] = useState(true);
   const logoutSubmit = (e)=>{
-    e.preventDefault()
-    
+    // e.preventDefault()
+    axios.post('/api/logout').then(({data})=>{
+
+   
         localStorage.removeItem('auth_token');
         localStorage.removeItem('auth_name');
+        localStorage.removeItem('role');
+        navigate('/')
         window.location.reload('/');
+      })
     
   }
   return (

@@ -40,7 +40,24 @@ export const Sidebar = (props) => {
               </Link>
             </Accordion.Body>
           </Accordion.Item>
-
+          { localStorage.getItem('role') == 1 && 
+            
+            <Accordion.Item eventKey="3">
+            <Accordion.Header className="menu-item">
+              <i className="fa fa-user-o icon"></i>
+              <span>User Management</span>
+            </Accordion.Header>
+            <Accordion.Body>
+              <Link className="item" to="/add-user">
+                Add 
+              </Link>
+              <Link className="item" to="/user-list">
+                list
+              </Link>
+            </Accordion.Body>
+          </Accordion.Item>
+          
+          }
           <Accordion.Item eventKey="2">
             <Accordion.Header className="menu-item">
               <i className="fa fa-floppy-o icon"></i>

@@ -22,6 +22,9 @@ import { useState } from "react";
 
 import {Register} from "./Components/Auth/Register";
 import {Login} from "./Components/Auth/Login";
+import {UserForm} from "./Components/User/UserForm";
+import {UserList} from "./Components/User/UserList";
+import {UserEdit} from "./Components/User/UserEdit";
 
 import axios from 'axios';
 axios.defaults.baseURL = "http://localhost:8000/";
@@ -43,7 +46,10 @@ const App = () => {
     setShowSidebar(!showSidebar);
   };
 
-  
+
+
+ 
+
 
   if(!localStorage.getItem('auth_token')){
  return(
@@ -77,28 +83,19 @@ const App = () => {
           <section className="wrapper-content">
          
             <Header sideBarToggle={sideBarToggle} showSidebar={showSidebar} />
-            
-            {/* <Switch>
-                <Route exact path="/Home" component={Home} />
-                <Route exact path="/" component={Login} />
-                <Route exact path="/Signup" component={Signup} />
-            </Switch> */}
+
+            {localStorage.getItem('role') == 1 && 
+              <Routes>
+                <Route path="/add-user" element={<UserForm />}/>
+                <Route path="/user-list" element={<UserList />}/>
+                <Route path="/user-edit/:id" element={<UserEdit />}/>
+              </Routes>
+            }
             <Routes>
-            {/* <Route
-                exact
-                path="/"
-                render={() => {
-                    return (
-                      localStorage.getItem('auth_token') != null ?
-                      <Navigate to="/" /> :
-                      <Navigate to="/login" /> 
-                    )
-                }}
-              /> */}
-             
-                <Route path="/" element={<Home />} />
-             
-             <Route path="/add-item" element={<Form />} />
+            
+              <Route path="/" element={<Home />} />
+               
+              <Route path="/add-item" element={<Form />} />
               <Route path="/all-list" element={<Table />} />
               <Route path="/loan-follow-up" element={<LoanFollowForm />} />
               <Route path="/loan-list" element={<LoanList />} />
